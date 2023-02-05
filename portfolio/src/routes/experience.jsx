@@ -1,8 +1,15 @@
 import React from 'react'
+import langPack from '../lang.jsx'
 
-const Experience = () => {
+const Experience = ({Language}) => {
+  const Lang = new langPack();
   return (
-    <div>Experience</div>
+    <div className="flexColumn pageBox">
+      <h2>{Lang.titles.info[Language.lang]}</h2>
+      <p>
+        {Lang.ps.info[Language.lang]}
+      </p>
+    </div>
   )
 }
 

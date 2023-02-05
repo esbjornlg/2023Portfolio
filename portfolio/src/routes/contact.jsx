@@ -4,9 +4,9 @@ const Contact = ({Language}) => {
   const Lang = new langPack();
   return (
     <div className="flexColumn pageBox">
-        <h2>{Lang.contact[Language.lang]}</h2>
+        <h2>{Lang.titles.contact[Language.lang]}</h2>
         <p>
-          {Lang.contactP[Language.lang]}
+          {Lang.ps.contact[Language.lang]}
         </p>
     </div>
   )
