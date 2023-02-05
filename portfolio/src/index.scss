@@ -1,0 +1,16 @@
+@import "./style/vars.scss";
+@import "./style/fx.scss";
+@import "./App.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', 'Roboto', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

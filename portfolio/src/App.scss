@@ -1,0 +1,67 @@
+@import "./style/vars.scss";
+
+:root {
+    background-color: var(--background);
+}
+
+h1 {
+    color: var(--text1);
+    font-size: 63px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+h2 {
+    color: var(--text3);
+    font-size: 63px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+h3 {
+    color: var(--text2);
+    font-size: 45px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+p {
+    
+}
+
+button {
+    display:inline-block;
+    cursor:pointer;
+    padding:5px 11px;
+    margin-top: 3px;
+}
+
+.flexRow {
+    display:flex;
+    flex-direction: row;
+}
+
+.flexColumn {
+    display:flex;
+    flex-direction: column;
+}
+
+.navbarLinks {
+    padding-left: 15px;
+
+}
+
+.Link {
+    font-size: var(--linkHeight);
+    color: var(--text1);
+    text-decoration: none;
+    transition: 0.3s;
+    list-style-type: circle;
+}
+
+.pageBox {
+    height: 70%;
+    padding: 15px;
+    background-color: rgba(0,20,200,0.3);
+    
+}

@@ -1,0 +1,20 @@
+Contact:
+I am currently looking for a job this summer 2023 in the development industry.
+Please reach out if you have a career opportunity or a project inquiry if you feel I could be of help.
+
+About:
+With an open mind to different ranges of solutions, 
+my goal is to continue broadening my software development knowledge
+spanning the entire stack, with attention to detail.
+I am currently attending the second year of the Software Engineering
+bachelor program at Blekinge Institute of Technology in Karlskrona, Sweden.
+On the side of creating computer programs, I also love
+creating other forms of digital work, such as video and audio,
+where I have a decade of on- and off engagement.
+
+Projects:
+Task Scheduler:
+My first web project, made with no prior experience in the React stack in 100 hours total.
+
+Experience:
+I'd like to think

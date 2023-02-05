@@ -1,0 +1,50 @@
+.Link:hover {
+    color: var(--text2);
+}
+  
+.Link:active {
+    color: var(--text3);
+}
+
+.ray {
+    position: absolute;
+    background-color: var(--ray1);
+    transition: 0.5s transform ease-in-out;
+    box-shadow: 0 0 10px var(--ray1);
+    animation: var(--bgSpeed) ease-in-out alternate infinite;
+}
+
+.rayHoriz {
+    width: 100%;
+    height: var(--rayWidth);
+    top: 50%;
+    left: 0%;
+    animation-name: horizRay;
+}
+
+.rayVert {
+    width: var(--rayWidth);
+    height: 100%;
+    top: 0%;
+    left: 50%;
+    animation-name: vertRay;
+    mix-blend-mode: difference;
+}
+
+@keyframes vertRay {
+    0% {
+        transform: translateX(-50vw);
+    }
+    100% {
+        transform: translateX(calc(50vw - var(--rayWidth)));
+    }
+}
+
+@keyframes horizRay {
+    0% {
+        transform: translateY(-50vh);
+    }
+    100% {
+      transform: translateY(calc(50vh - var(--rayWidth)));
+    }
+}
