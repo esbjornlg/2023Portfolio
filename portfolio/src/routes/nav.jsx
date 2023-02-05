@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, Router, BrowserRouter } from "react-router-dom";
 import '../index.scss'
 const Navbar = (rays) => {
 
@@ -21,13 +21,13 @@ const Navbar = (rays) => {
 
   return (
     <div className="flexRow" style={{padding: "0"}}>
-        <div style={{position: "relative", top: "50px", width: "40px", height: "10px", backgroundColor: "var(--text1)"}}></div>
       <div className="flexColumn navbarLinks" style={{padding: 0}}>
-        <Link onMouseEnter={handleMouseEnter} className="Link" to="/">Home</Link>
-        <Link onMouseEnter={handleMouseEnter} className="Link" to="/projects">Projects</Link>
-        <Link onMouseEnter={handleMouseEnter} className="Link" to="/experience">Experience</Link>
-        <Link onMouseEnter={handleMouseEnter} className="Link" to="/contact">Contact</Link>
-      <Outlet />
+          <BrowserRouter>
+            <Link className="Link" to="/">Home</Link>
+            <Link className="Link" to="/projects">Projects</Link>
+            <Link className="Link" to="/experience">Experience</Link>
+            <Link className="Link" to="/contact">Contact</Link>
+          </BrowserRouter>
       </div>
     </div>
   )

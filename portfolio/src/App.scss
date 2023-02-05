@@ -13,7 +13,7 @@ h1 {
 
 h2 {
     color: var(--text3);
-    font-size: 63px;
+    font-size: 55px;
     font-weight: 600;
     margin: 0px;
 }
@@ -26,10 +26,13 @@ h3 {
 }
 
 p {
-    
+    color: var(--text4);
+    font-size: 30px;
+    margin: 0px;
 }
 
 button {
+    font-family: 'Dosis', 'Roboto', sans-serif;
     display:inline-block;
     cursor:pointer;
     padding:5px 11px;
@@ -60,8 +63,24 @@ button {
 }
 
 .pageBox {
-    height: 70%;
+    width: 800px;
+    height: 40%;
     padding: 15px;
     background-color: rgba(0,20,200,0.3);
-    
+}
+
+.switchText {
+    color: var(--text2);
+    font-size: 45px;
+    font-weight: 600;
+    margin: 0px;
+    border-radius: 0px;
+    border-width: 0px;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.On {
+    color: var(--text1);
+    text-decoration: underline;
 }
