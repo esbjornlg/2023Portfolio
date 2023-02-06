@@ -22,14 +22,12 @@ const Navbar = ({Language}) => {
   };
 
   return (
-    <div className="flexRow" style={{padding: "0"}}>
+    <div className="flexRow" style={{padding: "0px"}}>
       <div className="flexColumn navbarLinks" style={{padding: 0}}>
-          {/* <BrowserRouter> */}
-            <Link className="Link" to="/">{Lang.titles.home[Language.lang]}</Link>
-            <Link className="Link" to="/projects">{Lang.titles.projects[Language.lang]}</Link>
-            <Link className="Link" to="/experience">{Lang.titles.info[Language.lang]}</Link>
-            <Link className="Link" to="/contact">{Lang.titles.contact[Language.lang]}</Link>
-          {/* </BrowserRouter> */}
+        <Link className="Link" to="/">{Lang.titles.home[Language.lang]}</Link>
+        <Link className="Link" to="/projects">{Lang.titles.projects[Language.lang]}</Link>
+        <Link className="Link" to="/experience">{Lang.titles.info[Language.lang]}</Link>
+        <Link className="Link" to="/contact">{Lang.titles.contact[Language.lang]}</Link>
       </div>
     </div>
   )

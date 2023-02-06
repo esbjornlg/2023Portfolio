@@ -52,12 +52,19 @@ class langPack {
                 se: `Erfarenhet`
             }
         }
-        this.projects = {
-            test1: {
-                title: "test2proj",
-                p: "Test project description hahaahahahahahahaahahahahahahaahahahahahahaahahahahahahaahahahaha"
+        this.projects = [
+            {
+                title: {
+                    enUs: "test2proj",
+                    se: "test2projekt"
+                },
+                p: {
+                    enUs: "Test project description hahaahahahahahahaahahahahahahaahahahahahahaahahahahahahaahahahaha",
+                    se: "Test projekt beskrivning"
+                },
+                image: './src/assets/TaskScheduler.png' 
             }
-        }
+        ]
     }
 }
 

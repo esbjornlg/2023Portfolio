@@ -34,7 +34,7 @@ function App() {
 
   const getLangColor = (NewLanguage) => {
     if (NewLanguage == language.lang)
-      return "switchText On"
+      return "switchText on"
     return "switchText";
   }
 
