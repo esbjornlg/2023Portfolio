@@ -44,7 +44,8 @@ class langPack {
                 Please reach out if you have a career opportunity or any other 
                 inquiries that you think I could be of help with.`,
                 se: `Just nu söker jag sommarjobb för sommaren 2023, 
-                så om ni har en ledig position i utvecklarbranschen
+                så om ni har en ledig position i utvecklarbranschen är jag mycket tacksam
+                om ni skulle höra av er.
                 `
             },
             info: {
@@ -55,14 +56,31 @@ class langPack {
         this.projects = [
             {
                 title: {
-                    enUs: "test2proj",
-                    se: "test2projekt"
+                    enUs: `Task Scheduler`,
+                    se: `Schemaläggare`
                 },
                 p: {
-                    enUs: "Test project description hahaahahahahahahaahahahahahahaahahahahahahaahahahahahahaahahahaha",
-                    se: "Test projekt beskrivning"
+                    enUs: `My first web project, made with no prior experience of the React 
+                    stack. The application visualizes suggested working hours for the entered
+                    tasks based on durations and deadlines. Completed in 110 hours total.`,
+                    se: `Individuellt högskoleprojekt påbörjat från ingen tidigare erfarenhet
+                    av webbprogrammering. Webbappen rekommenderar och visualiserar arbetstimmar
+                    beroende på användarens arbetens längd och deadline. Utfärdat på 110 arbetstimmar.`
                 },
-                image: './src/assets/TaskScheduler.png' 
+                image: './src/assets/TaskScheduler.png',
+                year: "2022"
+            },
+            {
+                title: {
+                    enUs: `Connectitude billing engine`,
+                    se: `Connectitude faktureringsprogram`
+                },
+                p: {
+                    enUs: `Test project description hahaahahahahahahaahahahahahahaahahahahahahaahahahahahahaahahahaha`,
+                    se: `Test projekt beskrivning`
+                },
+                image: './src/assets/TaskScheduler.png',
+                year: "2023"
             }
         ]
     }

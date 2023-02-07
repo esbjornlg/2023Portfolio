@@ -5,7 +5,7 @@ import ArticleScroller from '../components/ArticleScroller'
 const Projects = ({Language}) => {
   const Lang = new langPack();
   return (
-    <div className="flexColumn pageBox">
+    <div className="flexColumn pageBox" style={{height: "500px"}}>
       <h2>{Lang.titles.projects[Language.lang]}</h2>
       <ArticleScroller Articles={Lang.projects} Language={Language}/>
     </div>

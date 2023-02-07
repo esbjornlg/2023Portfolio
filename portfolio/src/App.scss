@@ -29,6 +29,7 @@ p {
     color: var(--text4);
     font-size: var(--pFontSize);
     margin: 0px;
+    word-wrap: break-word;
 }
 
 button {
@@ -37,6 +38,17 @@ button {
     cursor:pointer;
     padding:5px 11px;
     margin-top: 3px;
+}
+
+img {
+    border-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: 0.2s;
+}
+
+img:hover {
+    transform: scale(0.93);
+
 }
 
 .flexRow {
@@ -63,11 +75,15 @@ button {
 }
 
 .pageBox {
-    width: 800px;
+    width: 100%;
+    max-width: 1200px;
     min-height: min-content;
-    // height: 40%;
     padding: 15px;
-    background-color: rgba(0,20,200,0.3);
+    background-color: rgba(0,20,200,1);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    border-radius: 20px;
 }
 
 .switchText {
@@ -86,6 +102,13 @@ button {
     text-decoration: underline;
 }
 
-.articleScroller {
+.borderBox {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
 
+.article {
+    background-color: var(--articleColor);
+    border-radius: 20px;
 }

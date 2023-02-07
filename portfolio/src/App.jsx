@@ -40,9 +40,9 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100vh", width: "100vw", backgroundColor: "var(--background)"}}>
-      <div> {/* background */}
-        <div ref={rays}>
+    <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100vh", width: "100vw"}}>
+      <div style={{position: "absolute", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}> {/* background */}
+        <div ref={rays} >
           <div className="ray rayHoriz"></div>
           <div className="ray rayVert"></div>
         </div>
@@ -73,7 +73,7 @@ function App() {
         <div className="flexColumn" style={{width: "80%", justifyContent: "center", alignItems: "center"}}>
             <Routes>
               <Route path="/" element={<About Language={language}/>}/>
-              <Route path="/projects" element={<Projects Articles={""} Language={language}/>}/>
+              <Route path="/projects" element={<Projects Language={language}/>}/>
               <Route path="/experience" element={<Experience Language={language}/>}/>
               <Route path="/contact" element={<Contact Language={language}/>}/>
               <Route path="*" element={<Navigate to="/" replace />}/>
