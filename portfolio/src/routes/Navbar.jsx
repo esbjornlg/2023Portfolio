@@ -1,9 +1,9 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import { Routes, Route, Outlet, Link, Router, BrowserRouter } from "react-router-dom";
 import '../index.scss'
 import langPack from '../lang.jsx'
 
-const Navbar = ({Language}) => {
+const Navbar = ({Language, navTrigger, setNavTrigger}) => {
   const Lang = new langPack();
   // const handleMouseEnter = (Event) => {
   //   console.log("mouse entered:" + Event.target.offsetWidth);
@@ -21,13 +21,17 @@ const Navbar = ({Language}) => {
   //   });
   };
 
+  const handleLinkClick= (Event) => {
+    setNavTrigger({trigger: navTrigger.trigger + 1, event: Event})
+  }  
+
   return (
     <div className="flexRow" style={{padding: "0px"}}>
       <div className="flexColumn navbarLinks" style={{padding: 0}}>
-        <Link className="Link" to="/">{Lang.titles.home[Language.lang]}</Link>
-        <Link className="Link" to="/projects">{Lang.titles.projects[Language.lang]}</Link>
-        <Link className="Link" to="/experience">{Lang.titles.info[Language.lang]}</Link>
-        <Link className="Link" to="/contact">{Lang.titles.contact[Language.lang]}</Link>
+        <Link onClick={handleLinkClick} className="Link" to="/">{Lang.titles.home[Language.lang]}</Link>
+        <Link onClick={handleLinkClick} className="Link" to="/projects">{Lang.titles.projects[Language.lang]}</Link>
+        <Link onClick={handleLinkClick} className="Link" to="/experience">{Lang.titles.info[Language.lang]}</Link>
+        <Link onClick={handleLinkClick} className="Link" to="/contact">{Lang.titles.contact[Language.lang]}</Link>
       </div>
     </div>
   )

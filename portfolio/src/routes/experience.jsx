@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import langPack from '../lang.jsx'
+import { motion } from "framer-motion"
 
-const Experience = ({Language}) => {
+const Experience = ({Language, navTrigger}) => {
   const Lang = new langPack();
+  const Page = useRef();
+  useEffect(() => {
+    document.documentElement.style.setProperty("--routeX", Page.current.getBoundingClientRect().left);
+    document.documentElement.style.setProperty("--routeY", Page.current.getBoundingClientRect().top);
+    console.log(`Comparing values: ${Page.current.getBoundingClientRect().left}, ${Page.current.getBoundingClientRect().top};`);
+    if (navTrigger.event) {
+      console.log(`${navTrigger.event.pageX - Page.current.getBoundingClientRect().left}, ${navTrigger.event.pageY - Page.current.getBoundingClientRect().top}`);
+
+    }  }, [Page, navTrigger])
+
   return (
-    <div className="flexColumn pageBox">
+    <motion.div ref={Page} className="flexColumn pageBox">
       <h2>{Lang.titles.info[Language.lang]}</h2>
       <p>
         {Lang.ps.info[Language.lang]}
       </p>
-    </div>
+    </motion.div>
   )
 }
 

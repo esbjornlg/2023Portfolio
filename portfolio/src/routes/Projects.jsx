@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import langPack from '../lang.jsx'
 import ArticleScroller from '../components/ArticleScroller'
+import { motion } from "framer-motion"
 
-const Projects = ({Language}) => {
+const Projects = ({Language, navTrigger}) => {
   const Lang = new langPack();
+  const Page = useRef();
+  useEffect(() => {
+    document.documentElement.style.setProperty("--routeX", Page.current.getBoundingClientRect().left);
+    document.documentElement.style.setProperty("--routeY", Page.current.getBoundingClientRect().top);
+    console.log(`Comparing values: ${Page.current.getBoundingClientRect().left}, ${Page.current.getBoundingClientRect().top};`);
+    if (navTrigger.event) {
+      console.log(`${getComputedStyle(document.documentElement).getPropertyValue("--pageInX") - getComputedStyle(document.documentElement).getPropertyValue("--routeX")}, ${getComputedStyle(document.documentElement).getPropertyValue("--pageInY") - getComputedStyle(document.documentElement).getPropertyValue("--routeY")}`);
+
+    }
+  }, [Page, navTrigger])
+  
   return (
-    <div className="flexColumn pageBox" style={{height: "500px"}}>
+    <div ref={Page} className="flexColumn pageBox" style={{height: "500px"}}>
       <h2>{Lang.titles.projects[Language.lang]}</h2>
       <ArticleScroller Articles={Lang.projects} Language={Language}/>
     </div>
