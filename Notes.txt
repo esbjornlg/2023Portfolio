@@ -18,3 +18,15 @@ My first web project, made with no prior experience in the React stack in 100 ho
 
 Experience:
 I'd like to think
+
+
+
+
+
+
+
+
+nitial={{clipPath: "circle(0 at calc(var(--pageInX)*1px - var(--routeX)*1px) calc(var(--pageInY)*1px - var(--routeY)*1px))"}}
+    animate={{clipPath: "circle(120vw at calc(var(--pageInX)*1px - var(--routeX)*1px) calc(var(--pageInY)*1px - var(--routeY)*1px))"}}
+    exit={{clipPath: "circle(0vw at calc(var(--pageInX)*1px - var(--routeX)*1px) calc(var(--pageInY)*1px - var(--routeY)*1px))"}}
+    transition={{duration: 0, ease: [0.25, 0.1, 0.25, 1]}}

@@ -73,10 +73,9 @@ img:hover {
 }
 
 .pageBox {
-    position: absolute;
-    width: 100%;
-    max-width: 100%;
-    min-height: min-content;
+    position: relative;
+    width: 1000px;
+    min-height: fit-content;
     padding: 15px;
     background-color: rgb(98, 111, 235);
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -110,3 +109,7 @@ img:hover {
 .article {
     border-radius: 20px;
 }
+
+@media (max-width: 1600px) {
+    .pageBox {width: fit-content;}
+  }

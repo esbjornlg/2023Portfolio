@@ -8,11 +8,7 @@ const Experience = ({Language, navTrigger}) => {
   useEffect(() => {
     document.documentElement.style.setProperty("--routeX", Page.current.getBoundingClientRect().left);
     document.documentElement.style.setProperty("--routeY", Page.current.getBoundingClientRect().top);
-    console.log(`Comparing values: ${Page.current.getBoundingClientRect().left}, ${Page.current.getBoundingClientRect().top};`);
-    if (navTrigger.event) {
-      console.log(`${navTrigger.event.pageX - Page.current.getBoundingClientRect().left}, ${navTrigger.event.pageY - Page.current.getBoundingClientRect().top}`);
-
-    }  }, [Page, navTrigger])
+  }, [Page, navTrigger])
 
   return (
     <motion.div ref={Page} className="flexColumn pageBox">

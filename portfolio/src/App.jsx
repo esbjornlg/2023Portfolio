@@ -3,11 +3,8 @@ import { BrowserRouter, Route, Routes, Navigate, useLocation } from 'react-route
 import './App.scss';
 import Navbar from './routes/Navbar';
 import AnimatedRoutes from './routes/AnimatedRoutes';
-import About from './routes/About';
-import Projects from './routes/Projects';
-import Experience from './routes/Experience';
-import Contact from './routes/Contact';
 import LSManager from './logic/LSManager';
+import Helper from './logic/Helper'
 import { BsLightbulb, BsLightbulbOff } from 'react-icons/bs';
 import langPack from './lang.jsx';
 
@@ -42,18 +39,31 @@ function App() {
 
   useEffect(() => {
     if (navTrigger.trigger) {
+      let ray1 = document.getElementById("scanRay1");
       document.documentElement.style.setProperty("--pageInX", navTrigger.event.pageX);
       document.documentElement.style.setProperty("--pageInY", navTrigger.event.pageY);
-      // console.log(getComputedStyle(document.documentElement).getPropertyValue("--pageInX"))
-      if (!Array.from(document.getElementsByClassName("pageBox")[0].classList).includes("pageIn")) {
-        let pageInCircle = document.createElement("div");
-        pageInCircle.className = "pageInCircle";
-        for (let i = 0; i < circles.current.children.length; i++) {
-          if (circles.current.children[i].class = "pageInCircle")
-            circles.current.children[i].remove();
-        }
-        circles.current.appendChild(pageInCircle);
-      }
+      
+      let routeX = getComputedStyle(document.documentElement).getPropertyValue("--routeX");
+      let routeY = getComputedStyle(document.documentElement).getPropertyValue("--routeY");
+      // if (navTrigger.trigger ) {
+        ray1.style.left = routeX + "px";
+        // Helper.Wait(1000).then(() => {
+        //   ray1.style.width
+        //   Helper.Wait(1000).then(() => { 
+        //     ray1.style.left ="calc(100% - var(--rayWidth)";
+        //   })
+          
+        // })
+      // }
+      // if (!Array.from(document.getElementsByClassName("pageBox")[0].classList).includes("pageIn")) {
+      //   let pageInCircle = document.createElement("div");
+      //   pageInCircle.className = "pageInCircle";
+      //   for (let i = 0; i < circles.current.children.length; i++) {
+      //     if (circles.current.children[i].class = "pageInCircle")
+      //       circles.current.children[i].remove();
+      //   }
+      //   circles.current.appendChild(pageInCircle);
+      // }
     }
   }, [navTrigger])
   
@@ -66,8 +76,9 @@ function App() {
           {/* <div className="pageInCircle"></div> */}
         </div>
         <div ref={rays} >
-          <div className="ray rayHoriz"></div>
-          <div className="ray rayVert"></div>
+          <div id="scanRay1" className="ray rayVert"></div>
+          {/* <div id="scanRay2" className="ray rayVert"></div>
+          <div className="ray rayVert"></div> */}
         </div>
       </div>
       <div className="flexColumn" style={{position: "relative", width: "fit-content", height: "100%", marginLeft: "0px", padding: "20px", backgroundColor: "rgba(0,0,0,0.3"}}>

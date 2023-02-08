@@ -1,7 +1,7 @@
 :root {
     --pageInX: 0px;
     --pageInY: 0px;
-    --bgSpeed: 20s;
+    --bgSpeed: 10s;
     --rayWidth: 40px;
     --ray1: rgba(117, 33, 226, 0.144);
     --ray2: rgba(201, 57, 245, 0.493);
@@ -23,7 +23,7 @@
 .ray {
     position: absolute;
     background-color: var(--ray1);
-    transition: 0.5s transform ease-in-out;
+    transition: left 0.5s ease-in-out;
     box-shadow: 0 0 10px var(--ray1);
     animation: var(--bgSpeed) ease-in-out alternate infinite;
 }
@@ -33,28 +33,29 @@
     height: var(--rayWidth);
     top: 50%;
     left: 0%;
-    animation-name: horizRay;
+    animation-name: rayHoriz;
 }
 
 .rayVert {
     width: var(--rayWidth);
     height: 100%;
     top: 0%;
-    left: 50%;
-    animation-name: vertRay;
-    mix-blend-mode: difference;
+    left: 0%;
+    // animation-name: rayVert;
+    // transition: 3s ease-in-out infinite;
+    // mix-blend-mode: difference;
 }
 
-@keyframes vertRay {
+@keyframes rayVert {
     0% {
-        transform: translateX(-50vw);
+        transform: translateX(0vw);
     }
     100% {
-        transform: translateX(calc(50vw - var(--rayWidth)));
+        transform: translateX(calc(100vw - var(--rayWidth)));
     }
 }
 
-@keyframes horizRay {
+@keyframes rayHoriz {
     0% {
         transform: translateY(-50vh);
     }
