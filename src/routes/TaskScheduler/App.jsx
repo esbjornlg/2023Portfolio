@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './index.css';
+import './style/TaskList.css'
+import './style/HeaderFooter.css'
+import './style/Timeline.css'
 import LSManager from './logic/LSManager';
 import DateLogic from './logic/DateLogic';
 import SelectList from './components/SelectList';
 import TimelineTaskList from './components/TimelineTaskList';
 import Footer from './components/Footer';
-import './style/StyleIndex.jsx'
 import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 import { Link } from "react-router-dom";
 
@@ -100,7 +102,7 @@ function TaskScheduler() {
             <p className="ShadowText" style={{fontSize: '25px', marginTop: "18px", marginBottom: "-20px"}}>Task scheduler 2022</p>
           </div>
           <div>
-            <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly", marginRight: "10px", marginTop: "5px", marginBottom: "7px", marginRight: "30px"}}>
+            <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly", marginTop: "5px", marginBottom: "7px", marginRight: "30px"}}>
               <div style={{display: "flex", flexDirection: "column", marginRight: "10px"}}>
                 <label className="ShadowText SmallTitleCentered">Start work</label>
                 <SelectList LoadedList={LoadedHoursOfDay.Hours} PreferredElement={UserCapacity.Start} Disabled={false} ParentState={UserCapacity} ParentSetState={UpdateUserCapacityStart} ParentStateParam="Start" />

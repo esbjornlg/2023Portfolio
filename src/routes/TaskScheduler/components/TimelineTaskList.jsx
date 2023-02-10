@@ -7,7 +7,9 @@ import TaskDisplay from './TaskDisplay'
 import { MdOutlineArrowBackIosNew, MdOutlineArrowForwardIos } from 'react-icons/md'
 import { BsFillCalendarCheckFill, BsCalendarCheck } from 'react-icons/bs'
 import AddTaskInTable from './AddTaskInTable'
-import '../style/StyleIndex.jsx'
+import '../style/TaskList.css'
+import '../style/HeaderFooter.css'
+import '../style/Timeline.css'
 
 const TimelineTaskList = ({LoadedTasks, UserCapacity, EditTask, EditTaskVariable, RemoveTask, LoadedCategories, LoadedTaskStates, UpdateTasks, UpdateCategories}) => {
   const RenderCount = useRef([0, 0]);

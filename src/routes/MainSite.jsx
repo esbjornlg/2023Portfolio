@@ -58,7 +58,7 @@ function MainSite() {
       <div className="flexColumn unclickable" style={{zIndex: 2, position: "fixed", width: "fit-content", height: "100%", marginLeft: "0px", padding: "40px", backgroundColor: "rgba(0,0,0,0.0"}}>
         <div className="flexColumn unclickable">
           <h1 style={{pointerEvents: "auto", whiteSpace: "nowrap", marginTop: "0px"}}>Esbjörn Lyster Golawski</h1>
-          <h3 style={{pointerEvents: "auto", paddingLeft: "5px"}}>{Lang.titles.title[language.lang]}</h3>
+          <h3 style={{pointerEvents: "auto"}}>{Lang.titles.title[language.lang]}</h3>
         </div>
         <Navbar Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
         <div className="flexColumn" style={{height: "100%", justifyContent: "end", paddingBottom: "40px"}}>
