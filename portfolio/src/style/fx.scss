@@ -4,7 +4,7 @@
     --bgSpeed: 10s;
     --rayWidth: 40px;
     --ray1: rgba(117, 33, 226, 0.144);
-    --ray2: rgba(201, 57, 245, 0.493);
+    --ray2: rgba(113, 128, 212, 0.295);
     --ray3: rgba(230, 15, 0, 0.493);
 
     --circle1: rgb(94, 46, 122);
@@ -22,10 +22,11 @@
 
 .ray {
     position: absolute;
-    background-color: var(--ray1);
-    transition: left 0.5s ease-in-out;
+    background-image: repeating-linear-gradient(45deg, red, yellow 50vw, green 100vw);
+    transition: 0.5s ease-in-out;
     box-shadow: 0 0 10px var(--ray1);
     animation: var(--bgSpeed) ease-in-out alternate infinite;
+    mix-blend-mode: screen;
 }
 
 .rayHoriz {
@@ -61,6 +62,15 @@
     }
     100% {
       transform: translateY(calc(50vh - var(--rayWidth)));
+    }
+}
+
+@keyframes stripes {
+    0% {
+        background-image: translateY(-50vh);
+    }
+    100% {
+
     }
 }
 

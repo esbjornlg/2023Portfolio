@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Open+Sans&display=swap');
+
+/* body {
+  margin: 0;
+  font-family: 'Open Sans', 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--MainBgColor);
+} */
+
+:root {
+  --MainBgColor: #0a0001;
+  --Transparent: rgba(0,0,0,0);
+  --DarkOpaque: rgba(131, 131, 131, 0.5);
+  --BoxColor: rgb(243, 243, 243);
+  --BoxColorHalf: rgba(245, 246, 236, 0.5);
+  --BoxColor2: #cccccc;
+  --BoxColor3: #5a4066; 
+  --Notstarted: rgb(207, 35, 64);
+  --NotstartedHalf: rgba(255, 0, 43, 0.3);
+  --NotstartedDesat: rgba(173, 101, 125, 0.4);
+  --Inprogress: rgb(57, 55, 207);
+  --InprogressHalf: rgba(34, 47, 236, 0.3);
+  --InprogressDesat: rgba(100, 100, 100, 0.4);
+  --Completed: rgb(63, 63, 63);
+  --CompletedHalf: rgba(0, 0, 0, 0.3);
+  --CompletedDesat: rgba(114, 170, 151, 0.4);
+  --DueSoon1: rgb(255, 245, 52, 0.85);
+  --DueSoon2: rgb(255, 106, 0, 0.85);
+  --DueSoon3: rgb(255, 15, 15, 0.85);
+  --Late1: rgba(0, 0, 0, 0.85);
+  --Late1Half: rgba(0, 0, 0, 0.5);
+  --Late2: rgba(148, 64, 187, 0.85);
+  --Late3: rgba(230, 98, 208, 0.85);
+  --Disabled: rgba(238, 238, 238, 0.6);
+}
+
+.ShadowText {
+  font-size: 19px;
+  color: #341a30;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0);
+}
+
+.ShadowTextWhite {
+  font-size: 19px;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0);
+}
+
+.MediumTitleCentered {
+  text-align: center;
+  font-size: 25px;
+}
+
+.SmallTitleCentered {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+.SmallTitle {
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+
+.MiniTitle {
+  font-size: 18px;
+}
+
+.SmallButton {
+  margin-left: 0.75em;
+  min-width: 6em;
+  max-width: 6em;
+}
+
+.ButtonShadow {
+  background-color: #fefefe;
+  color:#000000;
+	border-radius: 10px;
+	border-width: 0px;
+  border-color: #000000;
+	display:inline-block;
+	cursor:pointer;
+	padding:5px 11px;
+  margin-top: 3px;
+  margin-top: 5px;
+  box-shadow:
+  1.9px 1.9px 2.2px rgba(0, 0, 0, 0.02),
+  4.6px 4.5px 5.3px rgba(0, 0, 0, 0.028);
+}
+
+.ButtonShadow:hover {
+  background-color: #dcdcdc;
+}
+
+.ButtonWithIcon {
+  background-color: var(--Transparent);
+  color: var(--MainBgColor);
+  border-color: var(--Transparent);
+	cursor:pointer;
+  border-radius: 100%;
+  
+}
+
+.ButtonWithIcon:hover {
+  color: var(--Inprogress);
+  background-color: var(--Transparent);
+}
+
+.ButtonWithIcon:focus {
+  color: var(--Inprogress);
+  background-color: var(--Transparent);
+  border-color: var(--Transparent);
+}
+
+select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 10px;
+  padding: 0.25em 0.5em;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+  color: var(--MainBgColor);
+  background-image: linear-gradient(to top, rgb(0,0,0,0), var(--BoxColor2) 300%);
+  -moz-appearance: button-arrow-down;
+  -webkit-appearance: button-arrow-down;
+  padding-left: 7px;
+}
+
+select[disabled] {
+  cursor: not-allowed;
+  background-image: var(--Disabled);
+  background-color: var(--Disabled);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.RoundedBox {
+  background-color: var(--BoxColor);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: default-button;
+
+}
+
+.UnscalableTextArea {
+  min-width: 99%;
+  max-width: 99%;
+  min-Height: 3.2em;
+  max-Height: 5em;
+}
+
+.RoundedInputDark {
+  font-size: 1rem;
+  border-radius: 10px;
+  border-width: 0px;
+  width: 100%;
+  height: 35px;
+  background-color : var(--BoxColor2); 
+  color: var(--MainBgColor);
+}
+
+.RoundedInputDark:read-only {
+  cursor: not-allowed;
+  background-color: var(--Disabled);
+  color: var(--MainBgColor);
+}
+
+.RoundedInputBright {
+  font-size: 1rem;
+  border-radius: 10px;
+  border-width: 0px;
+  height: 35px;
+  width: 100%;
+  padding-left: 7px;
+}
+
+.RoundedInputBright:read-only {
+  cursor: not-allowed;
+  background-color: var(--Disabled);
+  color: var(--MainBgColor);
+}
+
+.RoundedInputLong {
+  background-color : var(--BoxColor2); 
+  border-radius: 10px;
+  border-width: 0px;
+  min-width: 100%;
+  max-width: 100%;
+  height: 3em;
+  margin-top: 0.6em;
+  margin-right: 20px;
+}
+
+input::placeholder {
+  margin-left: 10%;
+  line-height: 0px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.NoBorderWidth {
+  border-color: var(--MainBgColor);
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}

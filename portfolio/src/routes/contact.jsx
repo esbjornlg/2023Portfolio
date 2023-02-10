@@ -1,24 +1,17 @@
-import React, { useRef, useEffect } from 'react'
+import React  from 'react'
+import { GrMail } from "react-icons/gr"
 import langPack from '../lang.jsx'
-import { motion } from "framer-motion"
 
 const Contact = ({Language, navTrigger}) => {
   const Lang = new langPack();
-  const Page = useRef();
-  useEffect(() => {
-    document.documentElement.style.setProperty("--routeX", Page.current.getBoundingClientRect().left);
-    document.documentElement.style.setProperty("--routeY", Page.current.getBoundingClientRect().top);
-    document.documentElement.style.setProperty("--routeWidth", Page.current.getBoundingClientRect().offsetWidth);
-    console.log(getComputedStyle(document.documentElement).getPropertyValue("--routeWidth"));
-  }, [Page, navTrigger])
-  
   return (
-    <motion.div ref={Page} className="flexColumn pageBox">
+    <div id="contact" className="flexColumn page borderBox">
         <h2>{Lang.titles.contact[Language.lang]}</h2>
         <p>
           {Lang.ps.contact[Language.lang]}
         </p>
-    </motion.div>
+        <a href="mailto:esbjornlystergolawski@email.com" className="article link externLink" >{Lang.titles.emailMe[Language.lang]} <GrMail style={{marginBottom: "-3px"}}/></a>
+    </div>
   )
 }
 

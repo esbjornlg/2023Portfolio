@@ -14,6 +14,7 @@ h2 {
     font-size: 55px;
     font-weight: 600;
     margin: 0px;
+    padding: 5px;
 }
 
 h3 {
@@ -21,6 +22,14 @@ h3 {
     font-size: 45px;
     font-weight: 600;
     margin: 0px;
+    width: fit-content;
+}
+h4 {
+    color: var(--text1);
+    font-size: 35px;
+    font-weight: 600;
+    margin: 0px;
+    width: fit-content;
 }
 
 p {
@@ -28,25 +37,48 @@ p {
     font-size: var(--pFontSize);
     margin: 0px;
     word-wrap: break-word;
+    display: inline-block;
+    white-space: pre-line;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    color: var(--text2);
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0px;
+    width: fit-content;
 }
 
 button {
     font-family: 'Dosis', 'Roboto', sans-serif;
-    display:inline-block;
     cursor:pointer;
-    padding:5px 11px;
+    padding: 5px 11px;
     margin-top: 3px;
+    background-color: transparent;
+    border-width: 0px;
+    transition: 0.5s;
+}
+
+.btnOn {
+    background-color: var(--text2rgba);
+    border-radius: 10px;
 }
 
 img {
     border-radius: 20px;
     border-top-right-radius: 20px;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
     transition: 0.2s;
 }
 
 img:hover {
-    transform: scale(0.93);
-
+    transform: scale(0.97);
 }
 
 .flexRow {
@@ -59,29 +91,31 @@ img:hover {
     flex-direction: column;
 }
 
-.navbarLinks {
-    padding-left: 15px;
-
+.unclickable {
+    pointer-events: none;
 }
 
-.Link {
+.link {
     font-size: var(--linkHeight);
     color: var(--text1);
     text-decoration: none;
     transition: 0.3s;
-    list-style-type: circle;
+    width: fit-content;
+    pointer-events: auto;
 }
 
-.pageBox {
-    position: relative;
-    width: 1000px;
-    min-height: fit-content;
-    padding: 15px;
-    background-color: rgb(98, 111, 235);
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-    border-radius: 20px;
+.link:hover {
+    color: var(--text2);
+    letter-spacing: 1px;
+}
+
+.externLink {
+    width: fit-content;
+    height: 30px;
+    font-size: 30px;
+    transition: 0.3s;
+    padding: 10px 10px 14px 10px;
+    margin: 5px;
 }
 
 .switchText {
@@ -108,8 +142,17 @@ img:hover {
 
 .article {
     border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--articleColor);
 }
 
-@media (max-width: 1600px) {
-    .pageBox {width: fit-content;}
-  }
+.page {
+    min-height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

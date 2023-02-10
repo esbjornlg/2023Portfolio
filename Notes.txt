@@ -30,3 +30,52 @@ nitial={{clipPath: "circle(0 at calc(var(--pageInX)*1px - var(--routeX)*1px) cal
     animate={{clipPath: "circle(120vw at calc(var(--pageInX)*1px - var(--routeX)*1px) calc(var(--pageInY)*1px - var(--routeY)*1px))"}}
     exit={{clipPath: "circle(0vw at calc(var(--pageInX)*1px - var(--routeX)*1px) calc(var(--pageInY)*1px - var(--routeY)*1px))"}}
     transition={{duration: 0, ease: [0.25, 0.1, 0.25, 1]}}
+
+
+
+    <BrowserRouter>
+    <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100%", width: "100vw"}}>
+      <div style={{position: "absolute", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}> {/* background */}
+        {/* <div ref={circles}>
+          <div className="pageInCircle"></div>
+        </div>
+        <div ref={rays}>
+          <div id="scanRay1" className="ray rayVert"></div>
+          <div id="scanRay2" className="ray rayVert" style={{zIndex: 5, left: "calc(100% - var(--rayWidth))", backgroundColor: "var(--ray2)"}}></div>
+          <div className="ray "></div>
+        </div> */}
+        {/* <div style={{position: "absolute", width: "100%", height: "10vh", bottom: "0px", backgroundColor: "var(--decor)"}}/>
+        <div style={{position: "absolute", width: "10vh", height: "100%", right: "0px", bottom: "0px", backgroundColor: "var(--decor)"}}/>
+        <div style={{position: "absolute", width: "30vh", height: "30vh", right: "0px", bottom: "0px", backgroundColor: "var(--decor)"}}/> */}
+        {/* <div style={{position: "absolute", width: "40vh", height: "20vh", right: "0px", bottom: "0px", backgroundColor: "var(--decor)"}}/>
+        <div style={{position: "absolute", width: "20vh", height: "40vh", right: "0px", bottom: "0px", backgroundColor: "var(--decor)"}}/> */}
+      </div>
+      <div className="flexColumn" style={{zIndex: 1, position: "fixed", width: "fit-content", height: "100%", marginLeft: "0px", padding: "40px", backgroundColor: "rgba(0,0,0,0.0"}}>
+        <div className="flexColumn">
+          <h1 style={{whiteSpace: "nowrap", marginTop: "0px"}}>Esbjörn Lyster Golawski</h1>
+          <h3 style={{paddingLeft: "5px"}}>{Lang.titles.title[language.lang]}</h3>
+        </div>
+        <Navbar Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
+        <div className="flexColumn" style={{height: "100%", justifyContent: "end", paddingBottom: "40px"}}>
+          <div className="flexRow" style={{justifyContent: "", marginBottom: "2vh"}}>
+            <div ref={langDiv} className="flexRow">
+              <button value="enUs" onClick={(Event) => changeLang("enUs", Event)} className={getLangColor("enUs")}>ENG</button>
+              <p style={{paddingTop: "10px"}}>/</p>
+              <button value="enUs" onClick={(Event) => changeLang("se", Event)} className={getLangColor("se")}>SWE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flexRow" style={{position: "relative", justifyContent: "center", width: "100%"}}>
+        <div className="flexColumn" style={{position: "relative", width: "100%", height: "100vh", overflowY: "scroll", scrollSnapType: "y mandatory"}}>
+          <div id="pageAbout" className="page borderBox" style={{height: "100vh"}}>
+            
+          </div>
+          <div id="pageExperience" className="page borderBox">
+            
+          </div>
+          {/* <AnimatedRoutes Language={language} navTrigger={navTrigger}/> */}
+        </div>
+      </div>
+    </div>
+    </BrowserRouter>

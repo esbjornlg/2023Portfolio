@@ -46,7 +46,19 @@ const helper = {
         }
         console.log(colorType);
         return colorArr;
-    }
+    },
+
+    getElemScrollCompletion: function getElemScrollCompletion(elem, scrollElem) {
+        if (!elem)
+          return;
+        const ScrollTop = scrollElem.getBoundingClientRect().top;
+        const ScrollBottom = scrollElem.getBoundingClientRect().bottom;
+        const ScrollMid = ScrollBottom - (ScrollBottom - ScrollTop)/2
+        const elemTop = elem.getBoundingClientRect().top;
+        const elemBottom = elem.getBoundingClientRect().bottom;
+        const elemMid = elemBottom - (elemBottom - elemTop)/2
+        return (1 - Math.abs(elemMid - ScrollMid)/(Math.abs((ScrollBottom - ScrollTop))));
+      }
 }
 
 export default helper
