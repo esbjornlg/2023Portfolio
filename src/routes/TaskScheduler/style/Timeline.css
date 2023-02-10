@@ -1,0 +1,112 @@
+:root {
+  --HourDivWidth: 200px;
+  --HeaderHeight: 50px;
+  --TimeDivBorderWidth: 1px;
+  --RowHeight: 80px;
+  --RowBorderWidth: 1px;
+}
+
+.TLRow {
+  height: var(--RowHeight);
+  border-style: solid;
+  border-color: var(--MainBgColor);
+  border-width: 0px 0px 1px 0px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.TLTaskRow {
+  background-color: var(--BoxColor);
+}
+
+.TLLegend {
+  background-color: var(--Completed);
+  color: var(--BoxColor);
+}
+
+.TimeDiv {
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: var(--BoxColor);
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  border-color: var(--MainBgColor);
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  text-align: start;
+  padding-top: 7px;
+  overflow: hidden;
+}
+
+.TaskDiv {
+  height: calc(var(--RowHeight) * 0.4);
+  position: absolute;
+  color: var(--BoxColor);
+  background-color: var(--InProgress);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  border-color: var(--MainBgColor);
+  padding-right: 0px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.WorkDiv {
+  height: calc(var(--RowHeight) * 0.6 + 1px);
+  margin-top: calc(var(--RowHeight) * 0.4 - 1px);
+  position: absolute;
+  color: var(--BoxColor);
+  background-color: var(--InProgress);
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: var(--MainBgColor);
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  text-align: center;
+  overflow: hidden;
+  line-height: calc(var(--RowHeight) * 0.5);
+  z-index: 2;
+}
+
+.WorkDivInfo {
+  height: 100%;
+  top: 0px;
+  position: absolute;
+  color: var(--BoxColor);
+  border-style: solid;
+  border-width: 0 0 0 0;
+  border-color: var(--MainBgColor);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  z-index: 1;
+}
+
+.TodayLine {
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  width: 2px;
+  position: absolute;
+  background-color: var(--BoxColor3);
+  z-index: 4;
+}
+
+.Slider {
+  width: 300px;
+}
+
+label,
+input {
+vertical-align: middle;
+padding: 0px;
+margin: 0px;
+height: 20px;
+}

@@ -1,0 +1,158 @@
+:root {
+    background-color: var(--background);
+}
+
+h1 {
+    color: var(--text1);
+    font-size: 63px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+h2 {
+    color: var(--text3);
+    font-size: 55px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 5px;
+}
+
+h3 {
+    color: var(--text2);
+    font-size: 45px;
+    font-weight: 600;
+    margin: 0px;
+    width: fit-content;
+}
+h4 {
+    color: var(--text1);
+    font-size: 35px;
+    font-weight: 600;
+    margin: 0px;
+    width: fit-content;
+}
+
+p {
+    color: var(--text4);
+    font-size: var(--pFontSize);
+    margin: 0px;
+    word-wrap: break-word;
+    display: inline-block;
+    white-space: pre-line;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    color: var(--text2);
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0px;
+    width: fit-content;
+}
+
+button {
+    font-family: 'Dosis', 'Roboto', sans-serif;
+    cursor:pointer;
+    padding: 5px 11px;
+    margin-top: 3px;
+    background-color: transparent;
+    border-width: 0px;
+    transition: 0.5s;
+}
+
+.btnOn {
+    background-color: var(--text2rgba);
+    border-radius: 10px;
+}
+
+img {
+    border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    transition: 0.2s;
+}
+
+img:hover {
+    transform: scale(0.97);
+}
+
+.flexRow {
+    display:flex;
+    flex-direction: row;
+}
+
+.flexColumn {
+    display:flex;
+    flex-direction: column;
+}
+
+.unclickable {
+    pointer-events: none;
+}
+
+.link {
+    font-size: var(--linkHeight);
+    color: var(--text1);
+    text-decoration: none;
+    transition: 0.3s;
+    width: fit-content;
+    pointer-events: auto;
+}
+
+.link:hover {
+    color: var(--text2);
+    letter-spacing: 1px;
+}
+
+.externLink {
+    width: fit-content;
+    height: 30px;
+    font-size: 30px;
+    transition: 0.3s;
+    padding: 10px 10px 14px 10px;
+    margin: 5px;
+}
+
+.switchText {
+    color: var(--text2);
+    font-size: 45px;
+    font-weight: 600;
+    margin: 0px;
+    border-radius: 0px;
+    border-width: 0px;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.on {
+    color: var(--text1);
+    text-decoration: underline;
+}
+
+.borderBox {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.article {
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--articleColor);
+}
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

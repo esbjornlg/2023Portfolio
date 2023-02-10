@@ -1,0 +1,126 @@
+:root {
+    --pageInX: 0px;
+    --pageInY: 0px;
+    --bgSpeed: 10s;
+    --rayWidth: 40px;
+    --ray1: rgba(117, 33, 226, 0.144);
+    --ray2: rgba(113, 128, 212, 0.295);
+    --ray3: rgba(230, 15, 0, 0.493);
+
+    --circle1: rgb(94, 46, 122);
+    --pageInSpeed: 2s;
+    --pageInFunc: cubic-bezier(0.25,0.1,0.25,1);
+}
+
+.Link:hover {
+    color: var(--text2);
+}
+  
+.Link:active {
+    color: var(--text3);
+}
+
+.ray {
+    position: absolute;
+    background-image: repeating-linear-gradient(45deg, red, yellow 50vw, green 100vw);
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 10px var(--ray1);
+    animation: var(--bgSpeed) ease-in-out alternate infinite;
+    mix-blend-mode: screen;
+}
+
+.rayHoriz {
+    width: 100%;
+    height: var(--rayWidth);
+    top: 50%;
+    left: 0%;
+    animation-name: rayHoriz;
+}
+
+.rayVert {
+    width: var(--rayWidth);
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    // animation-name: rayVert;
+    // transition: 3s ease-in-out infinite;
+    // mix-blend-mode: difference;
+}
+
+@keyframes rayVert {
+    0% {
+        transform: translateX(0vw);
+    }
+    100% {
+        transform: translateX(calc(100vw - var(--rayWidth)));
+    }
+}
+
+@keyframes rayHoriz {
+    0% {
+        transform: translateY(-50vh);
+    }
+    100% {
+      transform: translateY(calc(50vh - var(--rayWidth)));
+    }
+}
+
+@keyframes stripes {
+    0% {
+        background-image: translateY(-50vh);
+    }
+    100% {
+
+    }
+}
+
+
+@keyframes pageIn {
+    0% {
+        clip-path: circle(0vw at calc(var(--pageInX)*1px - var(--routeX)*1px) calc(var(--pageInY)*1px - var(--routeY)*1px));
+    }
+    100% {
+        clip-path: circle(100vw at calc(var(--pageInX)*1px - var(--routeX)*1px) calc(var(--pageInY)*1px - var(--routeY)*1px));
+    }
+}
+
+.pageIn {
+    animation-name: pageIn;
+    animation-duration: var(--pageInSpeed);
+    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes pageInCircle {
+    0% {
+        width: 0px;
+        height: 0px;
+        border-width: 0px;
+        left: calc(var(--pageInX)*1px);
+        top: calc(var(--pageInY)*1px);
+    }
+    5% {
+        border-width: 20px;
+    }
+    100% {
+        width: 240vw;
+        height: 240vw;
+        left: calc((var(--pageInX)*1px) - 120vw);
+        top: calc((var(--pageInY)*1px) - 120vw);
+    }
+}
+
+.pageInCircle {
+    position: relative;
+    border-radius: 100%;
+    border-width: 100px;
+    border-style: solid;
+    border-color: var(--circle1);
+    animation-name: pageInCircle;
+    animation-duration: var(--pageInSpeed); 
+    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+    animation-fill-mode: forwards;
+    // -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    // -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    // box-sizing: border-box;         /* Opera/IE 8+ */
+}
