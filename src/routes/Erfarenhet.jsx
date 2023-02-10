@@ -64,5 +64,4 @@ const Experience = ({Language, navTrigger}) => {
     </div>
   )
 }
-
 export default Experience

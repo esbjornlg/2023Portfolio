@@ -4,8 +4,8 @@ import '../App.scss';
 import Navbar from './Navbar';
 import About from './About';
 import Projects from './Projects';
-import Experience from './Experience';
-import Contact from './Contact';
+import Experience from "./Erfarenhet";
+import Contact from "./Kontakt";
 import LSManager from '../logic/LSManager';
 import styling from '../logic/styling'
 import langPack from '../lang.jsx';
