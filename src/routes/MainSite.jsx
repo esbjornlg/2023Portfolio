@@ -6,8 +6,8 @@ import '../App.scss';
 import Header from '../components/Header';
 import About from './About';
 import Projects from './Projects';
-import Experience from "./Erfarenhet";
-import Contact from "./Kontakt";
+import Experience from "./Experience";
+import Contact from "./Contact";
 import LSManager from '../logic/LSManager';
 import styling from '../logic/styling'
 import langPack from '../lang.jsx';
@@ -17,7 +17,7 @@ function MainSite() {
   const location = useLocation();
   const [language, setLanguage] = useState({lang: LSManager.getVarElseSet("language", "se")});
   const [navTrigger, setNavTrigger] = useState({trigger: 0, event: null});
-  const [dockHeader, setDockHeader] = useState(false);
+  // const [dockHeader, setDockHeader] = useState(false);
   const langDiv = useRef();
   const Lang = new langPack();
   const links = ["/", "/projects", "/experience", "/contact"];
@@ -33,16 +33,16 @@ function MainSite() {
     return "link";
   }
 
-  const toggleHeader = () => {
-    if (dockHeader) {
-      setDockHeader(false);
-      document.getElementById("mainPageHeader").style.transform = "translateX(0px)";
-    }
-    else {
-      setDockHeader(true);
-      document.getElementById("mainPageHeader").style.transform = "translateX(-110%)";
-    }
-  }
+  // const toggleHeader = () => {
+  //   if (dockHeader) {
+  //     setDockHeader(false);
+  //     document.getElementById("mainPageHeader").style.transform = "translateX(0px)";
+  //   }
+  //   else {
+  //     setDockHeader(true);
+  //     document.getElementById("mainPageHeader").style.transform = "translateX(-110%)";
+  //   }
+  // }
 
   const handleScroll = (Event) => {
     const linkIndex = Math.round(Event.target.scrollTop / window.innerHeight);
@@ -70,11 +70,15 @@ function MainSite() {
     <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100%", width: "100vw"}}>
       <div style={{position: "absolute", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}> {/* background */}
       </div>
-      <button className="link" onClick={() => toggleHeader()} style={{zIndex: 3, position: "fixed", width: "50px", height: "50px", top: "57px", left: "0px"}}>
+      {/* <button className="link" onClick={() => toggleHeader()} style={{zIndex: 3, position: "fixed", width: "50px", height: "50px", top: "57px", left: "0px"}}>
         <AiOutlineMenu />
-      </button>
-      <Header Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
-      <div className="flexRow" style={{position: "fixed", left: "40px", bottom: "0px", paddingBottom: "10px"}}>
+      </button> */}
+      {(window.innerWidth > 1170) ? (
+              <Header Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
+      ) : (
+        <></>
+      )}
+      <div id="langDiv" className="flexRow" style={{position: "fixed", left: "40px", bottom: "0px", paddingBottom: "10px"}}>
         <div ref={langDiv} className="flexRow" style={{pointerEvents: "auto"}}>
           <button value="enUs" onClick={(Event) => changeLang("enUs", Event)} className={getLangColor("enUs", language.lang)}>ENG</button>
           <p style={{paddingTop: "10px"}}>/</p>

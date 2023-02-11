@@ -14,7 +14,7 @@ const About = ({Language, navTrigger}) => {
           {Lang.ps.home[Language.lang]}
         </p>
         <div className="flexColumn">
-          <img src="./avatar.png" style={{width: "300px", height: "300px", margin: "10px 0px 0px 10px"}} />        
+          <img id="avatar" src="./avatar.png" style={{width: "300px", height: "300px", margin: "10px 0px 0px 10px"}} />        
           <div className="flexRow" style={{justifyContent: "center"}}>
             <a href="https://www.linkedin.com/in/esbj%C3%B6rn-lyster-golawski-76359a1b7/" target="_blank" className="article link externLink" ><GrLinkedin/></a>
             <a href="https://github.com/esbjornlg" target="_blank" className="article link externLink" ><GrGithub/></a>

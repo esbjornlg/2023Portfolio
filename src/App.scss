@@ -145,7 +145,6 @@ img:hover {
     border-style: solid;
     border-width: 2px;
     border-color: var(--articleColor);
-    overflow: hidden;
 }
 
 .page {
@@ -172,8 +171,8 @@ img:hover {
     #aboutContent {
         flex-direction: column;
     }
-    .page {
-        min-height: 120vh;
+    p {
+        font-size: 23px;
     }
 }
 
@@ -181,5 +180,8 @@ img:hover {
     #pageContainer {
         min-width: 90%;
     }
+    #avatar {
+        max-width: 150px;
+        max-height: 150px;
+    }
 }
-

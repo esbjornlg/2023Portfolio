@@ -41,10 +41,10 @@ class langPack {
         }
         this.ps = {
             home: {
-                enUs: `Hello! My name is Esbjörn and I am currently attending the second year of the Software Engineering
+                enUs: `Hello! My name is Esbjörn Lyster Golawski and I am a developer currently attending the second year of the Software Engineering
                 bachelor program at Blekinge Institute of Technology in Karlskrona, Sweden.
                 With an open mind to different ranges of solutions, my goal is to continue broadening my software development knowledge spanning the entire stack, with great attention to detail. During my free time, I also love creating other forms of digital work, such as video and audio, where I have a decade of on- and off engagement.`,
-                se: `Tjena! Mitt namn är Esbjörn och jag är en student inom Software Engineering på Blekinge Tekniska Högskola
+                se: `Tjena! Mitt namn är Esbjörn Lyster Golawski och jag är en utvecklare som studerar Software Engineering på Blekinge Tekniska Högskola
                 i Karlskrona. Just nu är mitt intresse att utöka mitt kunskapsområde inom programvaruutveckling, med kreativitet och uppmärksamhet för detaljer i sinne.
                 På fritiden brukar jag också hantera andra digitala kreativa medel, som film- och ljudproduktion.`
             },
