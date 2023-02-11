@@ -145,6 +145,7 @@ img:hover {
     border-style: solid;
     border-width: 2px;
     border-color: var(--articleColor);
+    overflow: hidden;
 }
 
 .page {
@@ -156,3 +157,29 @@ img:hover {
     flex-direction: column;
     justify-content: center;
 }
+
+#mainPageHeader {
+    transition: transform 0.3s
+}
+
+@media (max-width: 1500px) {
+    #pageContainer {
+        min-width: calc(100% - 420px);
+    }
+}
+
+@media (max-width: 1170px) {
+    #aboutContent {
+        flex-direction: column;
+    }
+    .page {
+        min-height: 120vh;
+    }
+}
+
+@media (max-width: 1030px) {
+    #pageContainer {
+        min-width: 90%;
+    }
+}
+

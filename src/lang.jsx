@@ -70,7 +70,7 @@ class langPack {
                     se: `Connectitude faktureringsprogram`
                 },
                 p: {
-                    enUs: `A BTH team project involving the creation of a system for sending invoices automatically, periodically via Fortnox' API to the IIoT-company Connectitude's customers. The invoice basis is gathered via a rest API to an SQL database, whose data can be altered via an admin interface made in Angular.`,
+                    enUs: `A BTH team project involving the creation of a system for sending invoices periodically via Fortnox' API to the IIoT-company Connectitude's customers.`,
                     se: `Detta grupprojekt innebär skapandet av ett system för automatiskt utskickande av fakturor via Fortnox API till IIoT-företaget Connectitudes kunder. Fakturaunderlaget hämtas via egengjord API till SQL databas och kan CRUD-hanteras bland annat av ett admingränssnitt skapat i Angular.`
                 },
                 tags: [

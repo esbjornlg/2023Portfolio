@@ -11,7 +11,7 @@ const Navbar = ({Language, navTrigger, setNavTrigger}) => {
   }  
 
   return (
-    <div className="flexColumn">
+    <div id="navbar" className="flexColumn" style={{width: "fit-content"}}>
       <Link onClick={handleLinkClick} goto="about" className="link" to="/">{Lang.titles.home[Language.lang]}</Link>
       <Link onClick={handleLinkClick} goto="projects" className="link" to="/projects">{Lang.titles.projects[Language.lang]}</Link>
       <Link onClick={handleLinkClick} goto="experience" className="link" to="/experience">{Lang.titles.info[Language.lang]}</Link>

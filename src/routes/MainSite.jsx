@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'
+import { AiOutlineMenu } from "react-icons/ai"
+
 import '../App.scss';
-import Navbar from './Navbar';
+import Header from '../components/Header';
 import About from './About';
 import Projects from './Projects';
 import Experience from "./Erfarenhet";
@@ -15,9 +17,11 @@ function MainSite() {
   const location = useLocation();
   const [language, setLanguage] = useState({lang: LSManager.getVarElseSet("language", "se")});
   const [navTrigger, setNavTrigger] = useState({trigger: 0, event: null});
+  const [dockHeader, setDockHeader] = useState(false);
   const langDiv = useRef();
   const Lang = new langPack();
   const links = ["/", "/projects", "/experience", "/contact"];
+
   const changeLang = (NewLanguage, Event) => {
     setLanguage({lang: NewLanguage});
     LSManager.setVar("language", NewLanguage);
@@ -27,6 +31,17 @@ function MainSite() {
     if (Language == LanguageOn)
       return "link on"
     return "link";
+  }
+
+  const toggleHeader = () => {
+    if (dockHeader) {
+      setDockHeader(false);
+      document.getElementById("mainPageHeader").style.transform = "translateX(0px)";
+    }
+    else {
+      setDockHeader(true);
+      document.getElementById("mainPageHeader").style.transform = "translateX(-110%)";
+    }
   }
 
   const handleScroll = (Event) => {
@@ -55,20 +70,15 @@ function MainSite() {
     <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100%", width: "100vw"}}>
       <div style={{position: "absolute", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}> {/* background */}
       </div>
-      <div className="flexColumn unclickable" style={{zIndex: 2, position: "fixed", width: "fit-content", height: "100%", marginLeft: "0px", padding: "40px", backgroundColor: "rgba(0,0,0,0.0"}}>
-        <div className="flexColumn unclickable">
-          <h1 style={{pointerEvents: "auto", whiteSpace: "nowrap", marginTop: "0px"}}>Esbjörn Lyster Golawski</h1>
-          <h3 style={{pointerEvents: "auto"}}>{Lang.titles.title[language.lang]}</h3>
-        </div>
-        <Navbar Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
-        <div className="flexColumn" style={{height: "100%", justifyContent: "end", paddingBottom: "40px"}}>
-          <div className="flexRow" style={{justifyContent: "", marginBottom: "2vh"}}>
-            <div ref={langDiv} className="flexRow" style={{pointerEvents: "auto"}}>
-              <button value="enUs" onClick={(Event) => changeLang("enUs", Event)} className={getLangColor("enUs", language.lang)}>ENG</button>
-              <p style={{paddingTop: "10px"}}>/</p>
-              <button value="enUs" onClick={(Event) => changeLang("se", Event)} className={getLangColor("se", language.lang)}>SWE</button>
-            </div>
-          </div>
+      <button className="link" onClick={() => toggleHeader()} style={{zIndex: 3, position: "fixed", width: "50px", height: "50px", top: "57px", left: "0px"}}>
+        <AiOutlineMenu />
+      </button>
+      <Header Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
+      <div className="flexRow" style={{position: "fixed", left: "40px", bottom: "0px", paddingBottom: "10px"}}>
+        <div ref={langDiv} className="flexRow" style={{pointerEvents: "auto"}}>
+          <button value="enUs" onClick={(Event) => changeLang("enUs", Event)} className={getLangColor("enUs", language.lang)}>ENG</button>
+          <p style={{paddingTop: "10px"}}>/</p>
+          <button value="enUs" onClick={(Event) => changeLang("se", Event)} className={getLangColor("se", language.lang)}>SWE</button>
         </div>
       </div>
       <div className="flexColumn" style={{position: "relative", justifyContent: "center", width: "100%"}}>
