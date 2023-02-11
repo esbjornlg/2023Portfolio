@@ -26,7 +26,7 @@ const ArticleScroller = ({Articles, Language}) => {
           </div>
           <div className="flexColumn" style={{alignItems: "center", width: "40%", height: "100%", maxHeight: "calc(var(--articleHeight))"}}>
             {(article.link) ? (
-              <Link to="/projects/taskscheduler" style={{width: "100%"}}>
+              <Link to="/projects/taskscheduler" style={{width: "100%", textDecoration: "none"}}>
                 <img src={article.image} style={{width: "100%", height: "70%", objectFit: "cover"}} />
                 <h3 style={{fontSize: "30px", marginTop: "10px"}}>{article.tags.map((tag) => (tag + " "))}</h3>
               </Link>

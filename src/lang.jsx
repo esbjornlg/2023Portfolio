@@ -80,7 +80,7 @@ class langPack {
                     `SQL`,
                     `Azure`
                 ],
-                image: `./src/assets/Connectitude.png`,
+                image: `/public/connectitude.png`,
                 link: false,
                 year: `2023`
             },
@@ -99,7 +99,7 @@ class langPack {
                     `React`,
                     `JavaScript`
                 ],
-                image: `./src/assets/TaskScheduler2.png`,
+                image: `/public/taskscheduler.png`,
                 link: `/projects/taskscheduler`,
                 year: `2022`
             }
