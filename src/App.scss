@@ -161,6 +161,17 @@ img:hover {
     transition: transform 0.3s
 }
 
+#aboutContent {
+    align-items: center;
+}
+
+#langDiv {
+    left: 40px;
+    bottom: 0px;
+    padding-bottom: 10px;
+}
+
+
 @media (max-width: 1500px) {
     #pageContainer {
         min-width: calc(100% - 420px);
@@ -183,5 +194,11 @@ img:hover {
     #avatar {
         max-width: 150px;
         max-height: 150px;
+    }
+    #aboutContent {
+        align-items: end;
+    }
+    #langDiv {
+        left: 10px;
     }
 }

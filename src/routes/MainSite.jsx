@@ -78,7 +78,7 @@ function MainSite() {
       ) : (
         <></>
       )}
-      <div id="langDiv" className="flexRow" style={{position: "fixed", left: "40px", bottom: "0px", paddingBottom: "10px"}}>
+      <div id="langDiv" className="flexRow" style={{zIndex: 3, position: "fixed"}}>
         <div ref={langDiv} className="flexRow" style={{pointerEvents: "auto"}}>
           <button value="enUs" onClick={(Event) => changeLang("enUs", Event)} className={getLangColor("enUs", language.lang)}>ENG</button>
           <p style={{paddingTop: "10px"}}>/</p>

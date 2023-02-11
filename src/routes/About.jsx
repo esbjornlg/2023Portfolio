@@ -9,7 +9,7 @@ const About = ({Language, navTrigger}) => {
   return (
     <div id="about" ref={Page} className="flexColumn page borderBox">
       <h2>{Lang.titles.home[Language.lang]}</h2>
-      <div id="aboutContent" className="flexRow" style={{alignItems: "center"}}>
+      <div id="aboutContent" className="flexRow">
         <p>
           {Lang.ps.home[Language.lang]}
         </p>
