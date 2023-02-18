@@ -22,8 +22,8 @@ const Experience = ({Language, navTrigger}) => {
       <h2>{Lang.titles.info[Language.lang]}</h2>
       <div ref={tabBtnCont} className="flexRow link">
         <button className="link btnOn" onClick={() => switchTab(0)}>{Lang.titles.stack[Language.lang]}</button>
-        <button className="link" onClick={() => switchTab(1)}>{Lang.titles.work[Language.lang]}</button>
-        <button className="link" onClick={() => switchTab(2)}>{Lang.titles.education[Language.lang]}</button>
+        <button className="link" onClick={() => switchTab(1)}>{Lang.titles.education[Language.lang]}</button>
+        <button className="link" onClick={() => switchTab(2)}>{Lang.titles.work[Language.lang]}</button>
       </div>
       <div style={{width: "fit-content", minHeight: "300px"}}>
       {(activeTab == 0) ? (
@@ -46,7 +46,7 @@ const Experience = ({Language, navTrigger}) => {
           <li>MS Office</li>
         </ul>
       </div>
-      ) : (activeTab == 1) ? (
+      ) : (activeTab == 2) ? (
         <div>
           <ul>
             <li>{Lang.experience.PostNord2020.title[Language.lang]}, PostNord <p style={{fontSize: "20px"}}>{Lang.experience.PostNord2020.year}</p></li>
@@ -56,7 +56,7 @@ const Experience = ({Language, navTrigger}) => {
       ) : (
         <div>
         <ul>
-          <li>{Lang.education.BTH2021.school[Language.lang]} <p style={{fontSize: "20px"}}>{Lang.education.BTH2021.year}</p></li>
+          <li><h3 style={{fontSize: "35px"}}>{Lang.education.BTH2021.school[Language.lang]}</h3><h3 style={{fontSize: "27px", color: "var(--text5)"}}>{Lang.education.BTH2021.program[Language.lang]}</h3> <p style={{fontSize: "20px"}}>{Lang.education.BTH2021.year}</p></li>
         </ul>
       </div>
       )}

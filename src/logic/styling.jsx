@@ -51,6 +51,7 @@ const helper = {
     getElemScrollCompletion: function getElemScrollCompletion(elem, scrollElem) {
         if (!elem)
           return;
+        // return 1;
         const ScrollTop = scrollElem.getBoundingClientRect().top;
         const ScrollBottom = scrollElem.getBoundingClientRect().bottom;
         const ScrollMid = ScrollBottom - (ScrollBottom - ScrollTop)/2

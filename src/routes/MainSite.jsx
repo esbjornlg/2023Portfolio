@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'
-import { AiOutlineMenu } from "react-icons/ai"
-
 import '../App.scss';
+import langPack from '../lang.jsx'
 import Header from '../components/Header';
 import About from './About';
 import Projects from './Projects';
@@ -10,17 +9,16 @@ import Experience from "./Experience";
 import Contact from "./Contact";
 import LSManager from '../logic/LSManager';
 import styling from '../logic/styling'
-import langPack from '../lang.jsx';
 
 function MainSite() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [language, setLanguage] = useState({lang: LSManager.getVarElseSet("language", "se")});
+  const [language, setLanguage] = useState({lang: LSManager.getVarElseSet("language", LSManager.getBrowserLang())});
   const [navTrigger, setNavTrigger] = useState({trigger: 0, event: null});
-  // const [dockHeader, setDockHeader] = useState(false);
   const langDiv = useRef();
-  const Lang = new langPack();
+  const bgCompSwitch = useRef();
   const links = ["/", "/projects", "/experience", "/contact"];
+  const Lang = new langPack();
 
   const changeLang = (NewLanguage, Event) => {
     setLanguage({lang: NewLanguage});
@@ -33,19 +31,23 @@ function MainSite() {
     return "link";
   }
 
-  // const toggleHeader = () => {
-  //   if (dockHeader) {
-  //     setDockHeader(false);
-  //     document.getElementById("mainPageHeader").style.transform = "translateX(0px)";
-  //   }
-  //   else {
-  //     setDockHeader(true);
-  //     document.getElementById("mainPageHeader").style.transform = "translateX(-110%)";
-  //   }
-  // }
+  const getPageIndex = () => {
+    return Math.round(document.getElementById("pageScroller").scrollTop / window.innerHeight);
+  }
+
+  const updateBG = () => {
+    // const linkIndex = getPageIndex();
+    // for (let i = 0; i < bgCompSwitch.current.children.length; i++) {
+    //   if (i == linkIndex)
+    //     bgCompSwitch.current.children[i].classList.add("bgHTMLOn");
+    //   else
+    //     bgCompSwitch.current.children[i].classList.remove("bgHTMLOn");
+    // }
+  }
 
   const handleScroll = (Event) => {
-    const linkIndex = Math.round(Event.target.scrollTop / window.innerHeight);
+    updateBG();
+    const linkIndex = getPageIndex();
     if (location.pathname != links[linkIndex])
       navigate(links[linkIndex]);
     let pageContainer = document.getElementById("pageContainer");
@@ -64,15 +66,25 @@ function MainSite() {
       if (location.pathname != "/")
         document.getElementById(location.pathname.slice(1)).scrollIntoView({behavior: "smooth"})
     }
+    updateBG();
   }, [navTrigger])
 
   return (
     <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100%", width: "100vw"}}>
-      <div style={{position: "absolute", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}> {/* background */}
+      <div className="flexRow" style={{position: "absolute", justifyContent: "center", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}>
+        {/* <div id="backgroundPattern" className="backgroundPattern">
+          <h3>
+            {Lang.FX.bghtml.top}
+            {Lang.FX.bghtml.bottom}
+          </h3>
+          <div ref={bgCompSwitch}>
+            <h3 className="bgHTMLOff">{"                  <About Language={language} navTrigger={navTrigger}/>"}</h3>
+            <h3 className="bgHTMLOff">{"                  <Projects Language={language} navTrigger={navTrigger}/>"}</h3>
+            <h3 className="bgHTMLOff">{"                  <Experience Language={language} navTrigger={navTrigger}/>"}</h3>
+            <h3 className="bgHTMLOff">{"                  <Contact Language={language} navTrigger={navTrigger}/>"}</h3>
+          </div>
+        </div> */}
       </div>
-      {/* <button className="link" onClick={() => toggleHeader()} style={{zIndex: 3, position: "fixed", width: "50px", height: "50px", top: "57px", left: "0px"}}>
-        <AiOutlineMenu />
-      </button> */}
       {(window.innerWidth > 1170) ? (
               <Header Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
       ) : (

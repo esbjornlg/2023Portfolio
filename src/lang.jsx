@@ -55,11 +55,12 @@ class langPack {
             contact: {
                 enUs: `I am currently looking for a summer job this summer of 2023 in the software development industry, preferably in the Karlskrona or Stockholm areas of Sweden. 
                 Please reach out if you have a career opportunity or any other  inquiries that you think I could be of help with.`,
-                se: `Just nu söker jag sommarjobb för denna sommaren 2023, helst i Karlskrona eller Stockholm, så om ni har en ledig position i utvecklarbranschen skulle jag vara väldigt tacksam om ni skulle höra av er.
+                se: `Just nu söker jag sommarjobb för denna sommaren 2023 i Karlskrona eller Stockholm, så om ni har en ledig position i utvecklarbranschen skulle jag vara väldigt tacksam om ni skulle höra av er.
+                M.v.h. Esbjörn
                 `
             },
             info: {
-                enUs: `I convey a broad range of tools that I `,
+                enUs: `Experience `,
                 se: `Erfarenhet`
             }
         }
@@ -127,10 +128,30 @@ class langPack {
                     se: `Blekinge Tekniska Högskola`
                 },
                 program: {
-                    enUs: `Software Engineering (180hp)`,
-                    se: `Software Engineering (180hp)`
+                    enUs: `Bachelor's degree in Software Engineering`,
+                    se: `Kandidat inom Software Engineering`
                 },
                 year: `2021-2024`
+            }
+        }
+        this.FX = {
+            bghtml: {
+                top: `
+                <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100%", width: "100vw"}}>
+                    <div style={{position: "absolute", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}>
+                        <div className="backgroundPattern"><h3>{Lang.FX.bghtml.top}</h3></div>
+                    </div>
+                    <div id="langDiv" className="flexRow" style={{zIndex: 3, position: "fixed"}}>
+                        <div ref={langDiv} className="flexRow" style={{pointerEvents: "auto"}}>
+                            <button value="enUs" onClick={(Event) => changeLang("enUs", Event)} className={getLangColor("enUs", language.lang)}>ENG</button>
+                            <p style={{paddingTop: "10px"}}>/</p>
+                            <button value="enUs" onClick={(Event) => changeLang("se", Event)} className={getLangColor("se", language.lang)}>SWE</button>
+                        </div>
+                    </div>
+                    `,
+                bottom: `
+                </div>
+                `
             }
         }
     }

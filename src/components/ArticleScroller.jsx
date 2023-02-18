@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import langPack from '../lang.jsx'
 import styling from '../logic/styling'
 const ArticleScroller = ({Articles, Language}) => {
   const ArticleScroller = useRef();
@@ -28,7 +27,7 @@ const ArticleScroller = ({Articles, Language}) => {
           </div>
           <div className="flexColumn" style={{justifyContent: "center", alignItems: "center", width: "40%", height: "100%", maxHeight: "calc(var(--articleHeight))"}}>
             {(article.link) ? (
-              <Link to="/projects/taskscheduler" style={{width: "100%", textDecoration: "none"}}>
+              <Link className="flexColumn" to={article.link} style={{justifyContent: "center", width: "100%", textDecoration: "none"}}>
                 <img src={article.image} style={{width: "100%", height: "70%", objectFit: "cover"}} />
                 <h3 style={{fontSize: "30px", marginTop: "10px"}}>{article.tags.map((tag) => (tag + " "))}</h3>
               </Link>

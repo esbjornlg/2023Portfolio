@@ -1,4 +1,10 @@
 const LSManager = {
+    getBrowserLang: function getBrowserLang() {
+        if (navigator.language == "sv")
+          return "se";
+        return "enUs";
+    },
+
     getVar: function getVar(varName) {
         if (varName in localStorage)
             return localStorage.getItem(varName)
