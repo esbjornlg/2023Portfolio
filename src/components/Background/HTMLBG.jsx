@@ -9,12 +9,12 @@ const HTMLBG = ({Language, navTrigger, scrollEvent, Links}) => {
 
     const getElemTree = (arr, element) => {
         arr.push({nodeInfo: {nodeName: element.nodeName.toLowerCase(), className: element.className, textContent: element.textContent}, children: []});
-        for (let i= 0; i < element.children.length; i++)
-            arr[arr.length - 1]["children"].push(getElemTree(arr[arr.length-1]["children"], element.children[i]));
+        // for (let i= 0; i < element.children.length; i++)
+        //     arr[arr.length - 1]["children"].push(getElemTree(arr[arr.length-1]["children"], element.children[i]));
     }
 
     const makeHTMLElemTree = (elemObj, index) => {
-        return (index < 2 ? (<div key={index} className={"bgHTMLContent " + (elemObj.children.length ? "" : "flexRow")} style={{marginLeft: "40px"}}>
+        return (index < 1 ? (<div key={index} className={"bgHTMLContent " + (elemObj.children.length ? "" : "flexRow")} style={{marginLeft: "40px"}}>
                     <HTMLElem key={-1} CompName={elemObj["nodeInfo"]["nodeName"]} ClassName={elemObj["nodeInfo"]["className"]} CompParams={[]} TextContent={elemObj["nodeInfo"]["textContent"]}/>
                         {elemObj.children.map((e, i) => { if (e) return makeHTMLElemTree(e, i)})}
                     <h3 key={-2} className="bgHTMLOff">{"</"}<span style={{color: "var(--htmlComp)"}}>{elemObj["nodeInfo"]["nodeName"]}</span>{">"}</h3>
