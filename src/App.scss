@@ -256,3 +256,9 @@ img:hover {
         left: 10px;
     }
 }
+
+@media (max-width: 500px) {
+    #experience {
+        transform: scale(0.9, 0.9);
+    }
+}

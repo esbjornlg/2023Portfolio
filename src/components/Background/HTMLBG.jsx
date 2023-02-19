@@ -14,11 +14,11 @@ const HTMLBG = ({Language, navTrigger, scrollEvent, Links}) => {
     }
 
     const makeHTMLElemTree = (elemObj, index) => {
-        return (index < 4 ? (<div key={index} className={"bgHTMLContent " + (elemObj.children.length ? "" : "flexRow")} style={{marginLeft: "40px"}}>
-                    <HTMLElem CompName={elemObj["nodeInfo"]["nodeName"]} ClassName={elemObj["nodeInfo"]["className"]} CompParams={[]} TextContent={elemObj["nodeInfo"]["textContent"]}/>
+        return (index < 2 ? (<div key={index} className={"bgHTMLContent " + (elemObj.children.length ? "" : "flexRow")} style={{marginLeft: "40px"}}>
+                    <HTMLElem key={-1} CompName={elemObj["nodeInfo"]["nodeName"]} ClassName={elemObj["nodeInfo"]["className"]} CompParams={[]} TextContent={elemObj["nodeInfo"]["textContent"]}/>
                         {elemObj.children.map((e, i) => { if (e) return makeHTMLElemTree(e, i)})}
-                    <h3 className="bgHTMLOff">{"</"}<span style={{color: "var(--htmlComp)"}}>{elemObj["nodeInfo"]["nodeName"]}</span>{">"}</h3>
-                </div>) : <></>)
+                    <h3 key={-2} className="bgHTMLOff">{"</"}<span style={{color: "var(--htmlComp)"}}>{elemObj["nodeInfo"]["nodeName"]}</span>{">"}</h3>
+                </div>) : <div key={-1 * index}></div>)
     }
 
     const [BGHTML, setBGHTML] = useState(<></>);

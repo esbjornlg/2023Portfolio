@@ -58,7 +58,7 @@ function MainSite({Links}) {
   return (
     <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100%", width: "100vw"}}>
       <div id="mainPageBG" className="flexRow" style={{position: "absolute", justifyContent: "center", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}>
-        {/* <HTMLBG Language={language} navTrigger={navTrigger} scrollEvent={scrollEvent} Links={AlteredLinks}/> */}
+        <HTMLBG Language={language} navTrigger={navTrigger} scrollEvent={scrollEvent} Links={AlteredLinks}/>
       </div>
       {(window.innerWidth > 1170) ? (
               <Header Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
