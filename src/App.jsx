@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
-import { useLocation, Navigate, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import MainSite from './routes/MainSite';
 import TaskScheduler from './routes/TaskScheduler/App';
 import './App.scss';

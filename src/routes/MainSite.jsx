@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'
 import '../App.scss';
-import langPack from '../lang.jsx'
 import Header from '../components/Header';
 import About from './About';
 import Projects from './Projects';
