@@ -59,7 +59,12 @@ const helper = {
         const elemBottom = elem.getBoundingClientRect().bottom;
         const elemMid = elemBottom - (elemBottom - elemTop)/2
         return (1 - Math.abs(elemMid - ScrollMid)/(Math.abs((ScrollBottom - ScrollTop))));
-      }
+    },
+
+    
+    getPageIndex: function getPageIndex() {
+        return Math.round(document.getElementById("pageScroller").scrollTop / window.innerHeight);
+    }
 }
 
 export default helper

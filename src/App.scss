@@ -1,3 +1,8 @@
+#mainPageBG {
+    background: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(0, 0, 0,) 90%);
+
+}
+
 h1 {
     color: var(--text1);
     font-size: 63px;
@@ -153,23 +158,57 @@ img:hover {
     justify-content: center;
 }
 
-.backgroundPattern {
+.HTMLBG {
+    overflow: visible;
     width: 100%;
     height: 100%;
     white-space: pre;
-    opacity: 0.2;
-    transform: rotate3d(2.6, 1.7, 0, 40deg);
+    opacity: 0.4;
     filter: blur(5px);
-    // background: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(0, 0, 0,) 90%);
+    animation: HTMLBGIdle;
+    animation-duration: 40s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .bgHTMLOn {
-    color: white;
-    letter-spacing: 2px;
+    color: rgb(147, 122, 255);
+    letter-spacing: 3px;
+    transition: 1s;
 }
 
 .bgHTMLOff {
-    transition: color 0.3s;
+    color: rgb(91, 67, 97);
+    transition: 1s;
+}
+
+.bgHTMLContent {
+    overflow: hidden;
+    animation: bgHTMLContent;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes HTMLBGIdle {
+    0% {
+        transform: translateY(-10%) translateX(0%) rotate3d(0.6, 0.5, 0, 50deg) scale(1,1);
+    }
+    100% {
+        transform: translateY(0%) translateX(-5%) rotate3d(0.6, 0.5, 0, 55deg) scale(1.15,1.15);
+    }
+}
+
+@keyframes bgHTMLContent {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+
+    }
 }
 
 #mainPageHeader {

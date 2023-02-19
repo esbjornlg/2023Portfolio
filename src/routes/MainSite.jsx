@@ -7,18 +7,20 @@ import About from './About';
 import Projects from './Projects';
 import Experience from "./Experience";
 import Contact from "./Contact";
+import HTMLBG from '../components/Background/HTMLBG';
 import LSManager from '../logic/LSManager';
 import styling from '../logic/styling'
 
-function MainSite() {
+function MainSite({Links}) {
   const navigate = useNavigate();
   const location = useLocation();
   const [language, setLanguage] = useState({lang: LSManager.getVarElseSet("language", LSManager.getBrowserLang())});
   const [navTrigger, setNavTrigger] = useState({trigger: 0, event: null});
   const langDiv = useRef();
-  const bgCompSwitch = useRef();
-  const links = ["/", "/projects", "/experience", "/contact"];
-  const Lang = new langPack();
+  let AlteredLinks = Links;
+  AlteredLinks[0] = "about";
+  
+  const [scrollEvent, setScrollEvent] = useState();
 
   const changeLang = (NewLanguage, Event) => {
     setLanguage({lang: NewLanguage});
@@ -31,25 +33,11 @@ function MainSite() {
     return "link";
   }
 
-  const getPageIndex = () => {
-    return Math.round(document.getElementById("pageScroller").scrollTop / window.innerHeight);
-  }
-
-  const updateBG = () => {
-    // const linkIndex = getPageIndex();
-    // for (let i = 0; i < bgCompSwitch.current.children.length; i++) {
-    //   if (i == linkIndex)
-    //     bgCompSwitch.current.children[i].classList.add("bgHTMLOn");
-    //   else
-    //     bgCompSwitch.current.children[i].classList.remove("bgHTMLOn");
-    // }
-  }
-
   const handleScroll = (Event) => {
-    updateBG();
-    const linkIndex = getPageIndex();
-    if (location.pathname != links[linkIndex])
-      navigate(links[linkIndex]);
+    setScrollEvent(Event);
+    const linkIndex = styling.getPageIndex();
+    if (location.pathname != "/" + Links[linkIndex])
+      navigate("/" + Links[linkIndex]);
     let pageContainer = document.getElementById("pageContainer");
     let pageScroller = document.getElementById("pageScroller");
     for (let i = 0; i < pageContainer.children.length; i++) {
@@ -66,24 +54,12 @@ function MainSite() {
       if (location.pathname != "/")
         document.getElementById(location.pathname.slice(1)).scrollIntoView({behavior: "smooth"})
     }
-    updateBG();
   }, [navTrigger])
 
   return (
     <div className="flexRow" style={{position: "relative", overflow: "hidden", height: "100%", width: "100vw"}}>
-      <div className="flexRow" style={{position: "absolute", justifyContent: "center", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}>
-        {/* <div id="backgroundPattern" className="backgroundPattern">
-          <h3>
-            {Lang.FX.bghtml.top}
-            {Lang.FX.bghtml.bottom}
-          </h3>
-          <div ref={bgCompSwitch}>
-            <h3 className="bgHTMLOff">{"                  <About Language={language} navTrigger={navTrigger}/>"}</h3>
-            <h3 className="bgHTMLOff">{"                  <Projects Language={language} navTrigger={navTrigger}/>"}</h3>
-            <h3 className="bgHTMLOff">{"                  <Experience Language={language} navTrigger={navTrigger}/>"}</h3>
-            <h3 className="bgHTMLOff">{"                  <Contact Language={language} navTrigger={navTrigger}/>"}</h3>
-          </div>
-        </div> */}
+      <div id="mainPageBG" className="flexRow" style={{position: "absolute", justifyContent: "center", zIndex: "-1", width: "100vw", height: "100vh", backgroundColor: "var(--background)"}}>
+        <HTMLBG Language={language} navTrigger={navTrigger} scrollEvent={scrollEvent} Links={AlteredLinks}/>
       </div>
       {(window.innerWidth > 1170) ? (
               <Header Language={language} navTrigger={navTrigger} setNavTrigger={setNavTrigger}/>
