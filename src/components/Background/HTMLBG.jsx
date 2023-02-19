@@ -5,7 +5,7 @@ import langPack from '../../lang.jsx'
 import styling from '../../logic/styling'
 
 const HTMLBG = ({Language, navTrigger, scrollEvent, Links}) => {
-    const [pageIndex, setPageIndex] = useState();
+    const [pageIndex, setPageIndex] = useState(0);
     const bgCompSwitch = useRef();
     const Lang = new langPack();
 
@@ -24,8 +24,8 @@ const HTMLBG = ({Language, navTrigger, scrollEvent, Links}) => {
                 </div>)
     }
 
-    const [BGHTML, setBGHTML] = useState([]);
-    const [headerHTML, setHeaderHTML] = useState([]);
+    const [BGHTML, setBGHTML] = useState(<></>);
+    const [headerHTML, setHeaderHTML] = useState();
 
     const updateBG = () => {
         const linkIndex = styling.getPageIndex();
@@ -33,7 +33,7 @@ const HTMLBG = ({Language, navTrigger, scrollEvent, Links}) => {
         let bgHTMLArr = [];
         getElemTree(bgHTMLArr, document.getElementById(Links[linkIndex]));
         setBGHTML(makeHTMLElemTree(bgHTMLArr[0], 0));
-        if (headerHTML.length == 0) {
+        if (!headerHTML) {
             let HeaderHTMLArr = [];
             getElemTree(HeaderHTMLArr, document.getElementById("mainPageHeader"));
             setHeaderHTML(makeHTMLElemTree(HeaderHTMLArr[0], 0));
